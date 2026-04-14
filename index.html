@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Vote interactif</title>
+</head>
+<body>
+    <section id="ratingSection">
+        <div class="cadre">
+        <div id="etoile">
+            <img alt="icon star" src="icon-star.svg" id="star" >
+        </div>
+        <h1 class="title1">How did we do?</h1>
+        <p class="p1">Please let us know we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <div class="contour">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+        </div>
+        <button class="submit" id="submit">SUBMIT</button>
+    </div>
+    </section>
+    <section id="thankYouSection" class="hidden">
+        <div class="cadreThankYou">
+            <img alt="icon illustration" class="illustration" id="illustration" src="illustration-thank-you.svg">
+            <div>
+                <p id="paragraph" class="p2"></p>
+            </div>
+            <h1 class="title2">Thank you!</h1>
+            <p class="p3">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+        </div>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>

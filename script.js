@@ -1,0 +1,23 @@
+const boutons = document.querySelectorAll(".btn")
+const submit = document.getElementById("submit")
+const paragraph = document.getElementById("paragraph")
+const ratingSection = document.getElementById("ratingSection")
+const thankYouSection = document.getElementById("thankYouSection")
+// pour chaque bouton, verifie la classlist puis la modifie à chaque clic pour qu'il n'y ai qu'un bouton surligné à la fois
+boutons.forEach(bouton => {
+  bouton.addEventListener("click", () => {
+    boutons.forEach(b => b.classList.remove('actif'));
+    bouton.classList.add("actif");
+  });
+});
+// modifie l'affichage du HTML et retourne la valeur du bouton avec la classList actif
+    submit.addEventListener('click', () =>{
+    const actif = document.querySelector(".actif");
+    if (actif) {
+        ratingSection.classList.add("hidden");  // ajouter
+        thankYouSection.classList.remove("hidden"); // retirer
+        const valeur = actif.textContent;
+        paragraph.textContent = `You selected ${valeur} out of 5`;
+    }
+    }
+)
