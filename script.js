@@ -1,23 +1,15 @@
-const boutons = document.querySelectorAll(".btn")
 const submit = document.getElementById("submit")
 const paragraph = document.getElementById("paragraph")
 const ratingSection = document.getElementById("ratingSection")
 const thankYouSection = document.getElementById("thankYouSection")
-// pour chaque bouton, verifie la classlist puis la modifie à chaque clic pour qu'il n'y ai qu'un bouton surligné à la fois
-boutons.forEach(bouton => {
-  bouton.addEventListener("click", () => {
-    boutons.forEach(b => b.classList.remove('actif'));
-    bouton.classList.add("actif");
-  });
-});
-// modifie l'affichage du HTML et retourne la valeur du bouton avec la classList actif
-    submit.addEventListener('click', () =>{
-    const actif = document.querySelector(".actif");
-    if (actif) {
+const input = document.querySelectorAll("input")
+
+// Regarde quel input est checked, puis modifie la class de la section pour modifier l'HTML et retourne le numéro de l'input check
+submit.addEventListener('click',() => {
+  const isChecked = document.querySelector('input[name="rating"]:checked')
+  if(isChecked){
         ratingSection.classList.add("hidden");  // ajouter
         thankYouSection.classList.remove("hidden"); // retirer
-        const valeur = actif.textContent;
-        paragraph.textContent = `You selected ${valeur} out of 5`;
-    }
-    }
-)
+        paragraph.textContent = `You selected ${isChecked.value} out of 5`;
+  }
+})
